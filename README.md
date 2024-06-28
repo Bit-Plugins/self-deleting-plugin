@@ -1,7 +1,7 @@
 <h1>Self-Deleting Plugin</h1>
 Self-Deleting bot was a social experiment we ran in August 2023. <br>
 The basic premise was that the bot would pick a random number between 1 and 5000, if a player guess correct, the bot would delete itself entirely <br><br>
-This time, the bot will select a number between 1 and 5,000 and shuffle itself every 3 hours <i>with a 20% chance of not shuffling itself.</i>
+This time, the bot will select a number between 1 and 10,000 and shuffle itself every 3 hours <i>with a 20% chance of not shuffling itself.</i>
 
 <h2>Version Information</h2>
 Bit Version: Bit 2024.1<br>
