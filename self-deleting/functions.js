@@ -1,6 +1,7 @@
 const numberJson = "./plugins/self-deleting/data.json";
 const fs = require('node:fs');
 const path = require('node:path');
+const config = require('./config.json')
 
 const dir = "./"
 const eventsDir = dir+"events/"
@@ -13,7 +14,39 @@ const pluginRspns = pluginDir+'responses/'
 module.exports = {
     startDelete: function startDelete() {
         console.log("It has started!!!!");
-        delEvents();
+        var random = Math.floor(Math.random() * config.maxNum);
+        var oldTimestamp;
+        var num;
+
+        /*fs.readFile(numberJson, (error, data) => {
+            if(error) {
+                console.error(error);
+                throw error;
+            }
+
+            const numJson = JSON.parse(data);
+            oldTimestamp = numJson.curTimestamp;
+            num = numJson.curNumber;
+        })*/
+
+        let date = new Date();
+        let cuTimestamp = date/1;
+
+		const newJson = {
+			curNumber: random,
+			curTimestamp: cuTimestamp
+		}
+
+		const data = JSON.stringify(newJson);
+
+		fs.writeFile(numberJson, data, (error) => {
+			if(error) {
+				console.error(error);
+
+				throw error;
+			}
+		})
+        //delEvents();
     },
 
     getRandomInt: function getRandomInt(max) {
@@ -25,7 +58,7 @@ module.exports = {
         var oldTimestamp;
         var num;
 
-        FileSystem.readFile(numberJson, (error, data) => {
+        fs.readFile(numberJson, (error, data) => {
             if(error) {
                 console.error(error);
                 throw error;
@@ -43,7 +76,7 @@ module.exports = {
 
 		    if(cuTimestamp >= oldTimestamp+10800000) {
 			    const newJson = {
-				    curNumber: randumb,
+				    curNumber: random,
 				    curTimestamp: cuTimestamp
 			    }
 

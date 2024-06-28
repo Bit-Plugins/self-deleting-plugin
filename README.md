@@ -18,7 +18,6 @@ Unsure.
 <h3>What are the unique features added in this version?</h3>
 <ul>
     <li>Shuffling Mechanic - the bot will basically shuffle every 3 hours</li>
-    <li>Guild Settings - We intend to allow server owners to change different aspects of the bot to help with spam.</li>
     <li>More funny responses - The bot had 100 unique responses last time... This time there will be MORE</li>
     <li>Translations - We want the bot to be usable in as many languages as possible</li>
 </ul>
